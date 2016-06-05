@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -35,5 +35,25 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
-;
+}).controller('BarcodeCtrl', function($scope, $cordovaBarcodeScanner) {
+
+  document.addEventListener("deviceready", function () {
+    $scope.scanBarcode = function() {
+      $cordovaBarcodeScanner
+      .scan()
+      .then(function(barcodeData) {
+        alert(barcodeData.text);
+        console.log("Barcode Format -> " + barcodeData.format);
+        console.log("Cancelled -> " + barcodeData.cancelled);
+        // Success! Barcode data is here
+      }, function(error) {
+        // An error occurred
+      });
+    };
+
+    // NOTE: encoding not functioning yet
+
+    
+
+  }, false);
+});

@@ -8,3 +8,20 @@ Change Ionic Spalsh Screen and Icon
   <preference name="ShowSplashScreenSpinner" value="false" />
   <preference name="FadeSplashScreenDuration" value="2000"/>
 
+Vorbereitung um plugins hinzuzufügen ngCordova
+
+1. bower install ngCordova
+
+2. index.html add next line
+<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+
+3. add 'ngCordova' in module
+#example ---.module('myApp', ['ngCordova'])
+
+
+add Barcode ngCordova plugin
+cordova plugin add https://github.com/phonegap/phonegap-plugin-barcodescanner.git
+
+1. add controler "BarcodeCtrl"
+2. add button in an.html 
