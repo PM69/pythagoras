@@ -1,1 +1,10 @@
 Dokumentation
+
+Change Ionic Spalsh Screen and Icon
+1. bild berabeiten icon.png und splash.png in Ordener resources
+2. Befehl ausfüren um die neuen bilder einzubinden $ ionic resources
+3. oprional parameter für den splasch screen in config.xml anpassen
+  <preference name="SplashScreenDelay" value="5000"/>
+  <preference name="ShowSplashScreenSpinner" value="false" />
+  <preference name="FadeSplashScreenDuration" value="2000"/>
+
