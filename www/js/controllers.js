@@ -53,7 +53,42 @@ angular.module('starter.controllers', ['ngCordova'])
 
     // NOTE: encoding not functioning yet
 
-    
+
 
   }, false);
-});
+}) .controller('Controller', ['$scope', function ($scope) {
+                  var vm = this;
+                    vm.options = {
+                        width: 2,
+                        height: 100,
+                        quite: 10,
+                        displayValue: true,
+                        font: "monospace",
+                        textAlign: "center",
+                        fontSize: 12,
+                        backgroundColor: "",
+                        lineColor: "#000"
+                    };
+                    var barcodes = [
+                        {
+                            type: "ean",
+                            code: "0029000018068"
+                        }
+                    ];
+                    vm.mycode = {};
+                    vm.mycode.type = "ean";
+                    vm.mycode.code = "0029000018068";
+                    var i = 0;
+                    setInterval(
+                            function () {
+                                if (i < barcodes.length) {
+                                    vm.mycode.type = barcodes[i].type;
+                                    vm.mycode.code = barcodes[i].code;
+                                    i++;
+                                } else {
+                                    i = 0;
+                                }
+                                $scope.$apply();
+                            },
+                            1000);
+                }]);

@@ -1,5 +1,7 @@
 <ion-view view-title="Anwendung">
     <ion-content ng-controller="BarcodeCtrl">
       <button class="button button-block button-positive" ng-click="scanBarcode()">Barcode scannen</button>
+      <barcode type="ean" string="0029000018068" options="vm.options"></barcode>
+      <div>0029000018068</div>
     </ion-content>
 </ion-view>
